@@ -84,7 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerContext.cs" />
+    <Compile Include="Assets\Scripts\PlayerContextProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Apex\Apex AI Examples and Documentation\Additional Documentation Online.txt" />
