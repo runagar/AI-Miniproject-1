@@ -18,5 +18,5 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
     {
         return _context;
     }
-
+ 
 }

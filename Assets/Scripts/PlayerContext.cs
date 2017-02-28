@@ -9,6 +9,7 @@ public class PlayerContext : IAIContext {
     {
         this.self = gameObject;
         this.observations = new List<GameObject>();
+        this.myPosition = self.transform.position;
     }
 
     public GameObject self
@@ -23,4 +24,9 @@ public class PlayerContext : IAIContext {
         private set;
     }
 
+    public Vector3 myPosition
+    {
+        get;
+        private set;
+    }
 }

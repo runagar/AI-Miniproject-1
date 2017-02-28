@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Apex\AINameMap.cs" />
     <Compile Include="Assets\Scripts\PlayerContext.cs" />
     <Compile Include="Assets\Scripts\PlayerContextProvider.cs" />
   </ItemGroup>
