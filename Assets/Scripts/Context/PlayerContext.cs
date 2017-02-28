@@ -10,6 +10,7 @@ public class PlayerContext : IAIContext {
         this.self = gameObject;
         this.observations = new List<GameObject>();
         this.myPosition = self.transform.position;
+        
     }
 
     public GameObject self

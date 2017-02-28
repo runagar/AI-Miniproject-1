@@ -85,8 +85,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Apex\AINameMap.cs" />
-    <Compile Include="Assets\Scripts\PlayerContext.cs" />
-    <Compile Include="Assets\Scripts\PlayerContextProvider.cs" />
+    <Compile Include="Assets\Scripts\Actions\Move.cs" />
+    <Compile Include="Assets\Scripts\Context\PlayerContext.cs" />
+    <Compile Include="Assets\Scripts\Context\PlayerContextProvider.cs" />
+    <Compile Include="Assets\Scripts\Context\TimeSinceLastX.cs" />
+    <Compile Include="Assets\Scripts\Scores\HungerScore.cs" />
+    <Compile Include="Assets\Scripts\Scores\HygineScore.cs" />
+    <Compile Include="Assets\Scripts\Scores\SleepScore.cs" />
+    <Compile Include="Assets\Scripts\Scores\ThirstScore.cs" />
+    <Compile Include="Assets\Scripts\Scores\ToiletScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Apex\Apex AI Examples and Documentation\Additional Documentation Online.txt" />
