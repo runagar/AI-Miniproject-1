@@ -13,6 +13,8 @@ public class PlayerContext : IAIContext {
         this.observations = new List<GameObject>();
         this.myPosition = self.transform.position;
         this.navAgent = self.GetComponent<NavMeshAgent>();
+        this.needScores = new List<float>();
+        for (int i = 0; i < 5; i++) needScores.Add(0f);
     }
 
     public List<float> needScores;

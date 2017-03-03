@@ -14,7 +14,7 @@ public sealed class HygineScore : ContextualScorerBase
 
         float time = c.self.GetComponent<TimeSinceLastX>().shower;
 
-        var newScore = this.score * time;
+        float newScore = this.score * time;
 
         c.needScores[3] = newScore;
 
