@@ -13,10 +13,7 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
 
     private void Awake()
     {
-        _context = new PlayerContext(this);
-
-        needScores = new List<float>();
-        for (int i = 0; i < 5; i++) needScores.Add(0f);
+        _context = new PlayerContext(this);  
     }
 
     public IAIContext GetContext(Guid aiID)

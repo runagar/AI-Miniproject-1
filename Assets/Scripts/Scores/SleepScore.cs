@@ -14,7 +14,7 @@ public sealed class SleepScore : ContextualScorerBase
 
         float time = c.self.GetComponent<TimeSinceLastX>().rest;
 
-        var newScore = this.score * time;
+        float newScore = this.score * time;
 
         c.needScores[2] = newScore;
 

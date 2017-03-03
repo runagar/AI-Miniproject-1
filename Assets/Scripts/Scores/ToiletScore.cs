@@ -13,7 +13,7 @@ public sealed class ToiletScore : ContextualScorerBase
 
         float time = c.self.GetComponent<TimeSinceLastX>().toilet;
 
-        var newScore = this.score * time;
+        float newScore = this.score * time;
 
         c.needScores[4] = newScore;
 

@@ -3,7 +3,7 @@ using Apex.AI;
 using UnityEngine;
 
 [FriendlyName("Move", "Move to a desired Location.")]
-public sealed class Move : ActionWithOptions<Vector3>{
+public sealed class Move : ActionBase{
 
     public override void Execute(IAIContext context)
     {
