@@ -16,7 +16,7 @@ public sealed class HygineScore : ContextualScorerBase
 
         var newScore = this.score * time;
 
-        
+        c.needScores[3] = newScore;
 
         return newScore;
     }
