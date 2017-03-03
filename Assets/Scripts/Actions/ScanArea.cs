@@ -10,6 +10,7 @@ public sealed class ScanArea : ActionBase {
 
     public override void Execute(IAIContext context)
     {
+        scanningRange = 30f;
         var scanLayer = LayerMask.NameToLayer("scanLayer");
 
         var c = (PlayerContext)context;
