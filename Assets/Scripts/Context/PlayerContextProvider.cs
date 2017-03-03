@@ -48,4 +48,26 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
         get;
         private set;
     }
+
+    
+    public void FulfillHunger()
+    {
+        _timeSinceLastMeal = 0;
+    }
+    public void FulfillThirst()
+    {
+        _timeSinceLastDrink = 0;
+    }
+    public void FulfillRest()
+    {
+        _timeSinceLastRest = 0;
+    }
+    public void FulfillToilet()
+    {
+        _timeSinceLastToilet = 0;
+    }
+    public void FulfillHygiene()
+    {
+        _timeSinceLastShower = 0;
+    }
 }

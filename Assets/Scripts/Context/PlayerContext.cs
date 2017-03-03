@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class PlayerContext : IAIContext {
 
-	public PlayerContext(GameObject gameObject)
+	public PlayerContext(GameObject gameObject, PlayerContextProvider player)
     {
         this.self = gameObject;
+        this.player = player;
         this.observations = new List<GameObject>();
         this.myPosition = self.transform.position;
         
+    }
+
+    public PlayerContextProvider player
+    {
+        get;
+        private set;
     }
 
     public GameObject self
