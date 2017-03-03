@@ -18,7 +18,6 @@ public sealed class MoveScore : ContextualScorerBase
 
         float[] thresholds = new float[5] { 20f, 18f, 36f, 24f, 44.8f };
 
-
         for (int i = 0; i < 5; i++)
         {
             if (c.needScores[i] > thresholds[i] && c.needScores[i] > highestScore)
@@ -27,8 +26,12 @@ public sealed class MoveScore : ContextualScorerBase
                 highestNeed = i;
             }
         }
+        Debug.Log("Highest need is " + highestNeed);
+
 
         GameObject target = null;
+
+        Debug.Log(c.observations.Count);
 
         switch (highestNeed)
         {
@@ -43,6 +46,7 @@ public sealed class MoveScore : ContextualScorerBase
                 if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
                 {
                     c.target = target.transform.position;
+                    Debug.Log("Setting target to: " + target.name);
                     return 20000f;
                 }
      
@@ -57,6 +61,8 @@ public sealed class MoveScore : ContextualScorerBase
                 if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
                 {
                     c.target = target.transform.position;
+                    Debug.Log("Setting target to: " + target.name);
+
                     return 20000f;
                 }
                 else return 0f;
@@ -70,6 +76,8 @@ public sealed class MoveScore : ContextualScorerBase
                 if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
                 {
                     c.target = target.transform.position;
+                    Debug.Log("Setting target to: " + target.name);
+
                     return 20000f;
                 }
                 else return 0f;
@@ -83,6 +91,8 @@ public sealed class MoveScore : ContextualScorerBase
                 if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
                 {
                     c.target = target.transform.position;
+                    Debug.Log("Setting target to: " + target.name);
+
                     return 20000f;
                 }
                 else return 0f;
@@ -96,6 +106,8 @@ public sealed class MoveScore : ContextualScorerBase
                 if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
                 {
                     c.target = target.transform.position;
+                    Debug.Log("Setting target to: " + target.name);
+
                     return 20000f;
                 }
                 else return 0f;
