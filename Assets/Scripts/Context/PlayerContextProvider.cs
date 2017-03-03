@@ -76,5 +76,9 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
         _timeSinceLastShower = 0;
     }
 
+    public void MoveTo(Vector3 target)
+    {
+
+    }
     
 }

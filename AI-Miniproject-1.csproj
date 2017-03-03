@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\Context\PlayerContext.cs" />
     <Compile Include="Assets\Scripts\Context\PlayerContextProvider.cs" />
     <Compile Include="Assets\Scripts\Context\TimeSinceLastX.cs" />
+    <Compile Include="Assets\Scripts\MoveToTarget.cs" />
     <Compile Include="Assets\Scripts\Scores\HungerScore.cs" />
     <Compile Include="Assets\Scripts\Scores\HygineScore.cs" />
     <Compile Include="Assets\Scripts\Scores\MoveScore.cs" />

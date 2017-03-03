@@ -10,6 +10,6 @@ public sealed class Move : ActionWithOptions<Vector3>{
 
         var c = (PlayerContext)context;
 
-        throw new NotImplementedException();
+        c.player.MoveTo(c.target);
     }
 }

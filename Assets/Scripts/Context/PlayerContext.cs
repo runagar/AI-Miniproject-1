@@ -17,6 +17,8 @@ public class PlayerContext : IAIContext {
 
     public List<float> needScores;
 
+    public Vector3 target;
+
 
 
     public PlayerContextProvider player
