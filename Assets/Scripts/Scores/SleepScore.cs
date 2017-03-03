@@ -12,11 +12,13 @@ public sealed class SleepScore : ContextualScorerBase
     {
         var c = (PlayerContext)context;
 
+        float score = 1;
+
         float time = c.self.GetComponent<TimeSinceLastX>().rest;
 
-        float newScore = this.score * time;
+        float newScore = score * time;
 
-        c.needScores[2] = newScore;
+        c.needScores[2] = newScore; 
 
         return newScore;
     }

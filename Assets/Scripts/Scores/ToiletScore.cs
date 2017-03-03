@@ -11,9 +11,11 @@ public sealed class ToiletScore : ContextualScorerBase
     {
         var c = (PlayerContext)context;
 
+        float score = 4;
+
         float time = c.self.GetComponent<TimeSinceLastX>().toilet;
 
-        float newScore = this.score * time;
+        float newScore = score * time;
 
         c.needScores[4] = newScore;
 

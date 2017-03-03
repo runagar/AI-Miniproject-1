@@ -11,6 +11,8 @@ public sealed class MoveScore : ContextualScorerBase
     public override float Score(IAIContext context)
     {
 
+        float minDist = 1;
+
         var c = (PlayerContext)context;
 
         float highestScore = 0;
@@ -27,6 +29,8 @@ public sealed class MoveScore : ContextualScorerBase
             }
         }
 
+        Debug.Log("[" + c.needScores[0]+ ", " + c.needScores[1] +", " + c.needScores[2] +", " + c.needScores[3] +", " + c.needScores[4] + "]" + "\n Highest Need = " + highestNeed);
+
         GameObject target = null;
 
         switch (highestNeed)
@@ -39,7 +43,7 @@ public sealed class MoveScore : ContextualScorerBase
 
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > minDist)
                 {
                     c.target = target.transform.position;
                     Debug.Log("Setting target to: " + target.name);
@@ -54,7 +58,7 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Sink") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > minDist)
                 {
                     c.target = target.transform.position;
                     Debug.Log("Setting target to: " + target.name);
@@ -69,7 +73,7 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Bed") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > minDist + 1)
                 {
                     c.target = target.transform.position;
                     return 20000f;
@@ -82,7 +86,7 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Bathtub") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 2)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > minDist)
                 {
                     c.target = target.transform.position;
                     return 20000f;
@@ -98,7 +102,7 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Loo") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > minDist)
                 {
                     c.target = target.transform.position;
                     Debug.Log("Setting target to: " + target.name);

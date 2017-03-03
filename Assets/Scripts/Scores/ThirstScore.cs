@@ -11,9 +11,11 @@ public sealed class ThirstScore : ContextualScorerBase {
     {
         var c = (PlayerContext)context;
 
+        float score = 3;
+
         float time = c.self.GetComponent<TimeSinceLastX>().drink;
 
-        float newScore = this.score * time;
+        float newScore = score * time;
 
         c.needScores[1] = newScore;
 
