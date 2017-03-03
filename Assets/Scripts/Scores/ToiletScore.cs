@@ -7,7 +7,6 @@ using Apex.Serialization;
 
 public sealed class ToiletScore : ContextualScorerBase
 {
-
     public override float Score(IAIContext context)
     {
         var c = (PlayerContext)context;
