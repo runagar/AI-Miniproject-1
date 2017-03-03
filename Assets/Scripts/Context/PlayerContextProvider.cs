@@ -9,7 +9,7 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
 
     private IAIContext _context;
     public List<float> needScores;
-
+    public MoveToTarget _moveScript;
 
     private void Awake()
     {
@@ -17,6 +17,8 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
 
         needScores = new List<float>();
         for (int i = 0; i < 5; i++) needScores.Add(0f);
+
+        _moveScript = this.GetComponent<MoveToTarget>();
     }
 
     public IAIContext GetContext(Guid aiID)
@@ -78,7 +80,7 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
 
     public void MoveTo(Vector3 target)
     {
-
+        _moveScript.MoveTo(target);
     }
     
 }
