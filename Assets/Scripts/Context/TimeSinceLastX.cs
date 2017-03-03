@@ -101,8 +101,5 @@ public class TimeSinceLastX : MonoBehaviour {
         restSlider.value = rest;
         hygieneSlider.value = shower;
         bladderSlider.value = toilet;
-
-
-
     }
 }

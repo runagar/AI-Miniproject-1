@@ -10,10 +10,13 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
     private IAIContext _context;
     public List<float> needScores;
     public MoveToTarget _moveScript;
+    TimeSinceLastX timeScript;
 
     private void Awake()
     {
-        _context = new PlayerContext(this);  
+        _context = new PlayerContext(this);
+        _moveScript = this.gameObject.GetComponent<MoveToTarget>();
+        timeScript = this.gameObject.GetComponent<TimeSinceLastX>();
 
     }
 
@@ -21,57 +24,27 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
     {
         return _context;
     }
- 
-    public float _timeSinceLastMeal
-    {
-        get;
-        private set;
-    }
-
-    public float _timeSinceLastDrink
-    {
-        get;
-        private set;
-    }
-
-    public float _timeSinceLastShower
-    {
-        get;
-        private set;
-    }
-
-    public float _timeSinceLastToilet
-    {
-        get;
-        private set;
-    }
-
-    public float _timeSinceLastRest
-    {
-        get;
-        private set;
-    }
-
     
     public void FulfillHunger()
     {
-        _timeSinceLastMeal = 0;
+        timeScript.meal = 0;
+
     }
     public void FulfillThirst()
     {
-        _timeSinceLastDrink = 0;
+        timeScript.drink = 0;
     }
     public void FulfillRest()
     {
-        _timeSinceLastRest = 0;
+        timeScript.rest = 0;
     }
     public void FulfillToilet()
     {
-        _timeSinceLastToilet = 0;
+        timeScript.toilet = 0;
     }
     public void FulfillHygiene()
     {
-        _timeSinceLastShower = 0;
+        timeScript.shower = 0;
     }
 
     public void MoveTo(Vector3 target)

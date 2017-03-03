@@ -19,6 +19,11 @@ public class PlayerContext : IAIContext {
 
     public List<float> needScores;
 
+    void Awake()
+    {
+
+    }
+
     public Vector3 target;
 
 

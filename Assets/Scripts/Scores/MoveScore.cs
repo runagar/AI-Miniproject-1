@@ -26,12 +26,8 @@ public sealed class MoveScore : ContextualScorerBase
                 highestNeed = i;
             }
         }
-        Debug.Log("Highest need is " + highestNeed);
-
 
         GameObject target = null;
-
-        Debug.Log(c.observations.Count);
 
         switch (highestNeed)
         {
@@ -43,7 +39,7 @@ public sealed class MoveScore : ContextualScorerBase
 
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
                 {
                     c.target = target.transform.position;
                     Debug.Log("Setting target to: " + target.name);
@@ -58,7 +54,7 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Sink") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
                 {
                     c.target = target.transform.position;
                     Debug.Log("Setting target to: " + target.name);
@@ -73,11 +69,9 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Bed") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
                 {
                     c.target = target.transform.position;
-                    Debug.Log("Setting target to: " + target.name);
-
                     return 20000f;
                 }
                 else return 0f;
@@ -88,14 +82,15 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Bathtub") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 2)
                 {
                     c.target = target.transform.position;
-                    Debug.Log("Setting target to: " + target.name);
-
                     return 20000f;
                 }
-                else return 0f;
+                else
+                {
+                    return 0f;
+                } 
 
             case 4:
                 foreach (GameObject o in c.observations)
@@ -103,7 +98,7 @@ public sealed class MoveScore : ContextualScorerBase
                     if (o.name == "Loo") target = o;
                 }
 
-                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 1)
+                if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > 0.5)
                 {
                     c.target = target.transform.position;
                     Debug.Log("Setting target to: " + target.name);
