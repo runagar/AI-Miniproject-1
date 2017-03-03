@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Actions\Drink.cs" />
     <Compile Include="Assets\Scripts\Actions\Eat.cs" />
     <Compile Include="Assets\Scripts\Actions\Move.cs" />
+    <Compile Include="Assets\Scripts\Actions\ScanArea.cs" />
     <Compile Include="Assets\Scripts\Actions\Sleep.cs" />
     <Compile Include="Assets\Scripts\Actions\UseToilet.cs" />
     <Compile Include="Assets\Scripts\Context\PlayerContext.cs" />

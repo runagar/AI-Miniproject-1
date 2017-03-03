@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeSinceLastX : MonoBehaviour {
 
@@ -9,7 +10,14 @@ public class TimeSinceLastX : MonoBehaviour {
     private float _rest;
     private float _drink;
     private float _shower;
- 
+
+    Text text;
+
+    private void Start()
+    {
+        text = GameObject.FindGameObjectWithTag("UItext").GetComponent<Text>();
+    }
+
     public float meal
     {
         get
@@ -77,5 +85,7 @@ public class TimeSinceLastX : MonoBehaviour {
         shower += Time.deltaTime;
         toilet += Time.deltaTime;
         rest += Time.deltaTime;
+
+        text.text = "" + meal;
     }
 }
