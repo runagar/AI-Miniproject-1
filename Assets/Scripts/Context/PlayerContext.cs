@@ -15,6 +15,10 @@ public class PlayerContext : IAIContext {
         this.navAgent = self.GetComponent<NavMeshAgent>();
     }
 
+    public List<float> needScores;
+
+
+
     public PlayerContextProvider player
     {
         get;

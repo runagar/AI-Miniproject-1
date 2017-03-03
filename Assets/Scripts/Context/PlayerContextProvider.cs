@@ -8,10 +8,15 @@ using Apex.AI.Components;
 public class PlayerContextProvider : MonoBehaviour, IContextProvider {
 
     private IAIContext _context;
+    public List<float> needScores;
+
 
     private void Awake()
     {
         _context = new PlayerContext(this);
+
+        needScores = new List<float>();
+        for (int i = 0; i < 5; i++) needScores.Add(0f);
     }
 
     public IAIContext GetContext(Guid aiID)
@@ -70,4 +75,6 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
     {
         _timeSinceLastShower = 0;
     }
+
+    
 }

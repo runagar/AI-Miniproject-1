@@ -11,11 +11,15 @@ public class TimeSinceLastX : MonoBehaviour {
     private float _drink;
     private float _shower;
 
-    Text text;
+    Slider hungerSlider, thirstSlider, restSlider, hygieneSlider, bladderSlider;
 
     private void Start()
     {
-        text = GameObject.FindGameObjectWithTag("UItext").GetComponent<Text>();
+        hungerSlider = GameObject.Find("Hunger").GetComponent<Slider>();
+        thirstSlider = GameObject.Find("Thirst").GetComponent<Slider>();
+        restSlider = GameObject.Find("Rest").GetComponent<Slider>();
+        hygieneSlider = GameObject.Find("Hygiene").GetComponent<Slider>();
+        bladderSlider = GameObject.Find("Bladder").GetComponent<Slider>();
     }
 
     public float meal
@@ -86,6 +90,19 @@ public class TimeSinceLastX : MonoBehaviour {
         toilet += Time.deltaTime;
         rest += Time.deltaTime;
 
-        text.text = "" + meal;
+        if (meal > 10) meal = 10;
+        if (drink > 10) drink = 10;
+        if (shower > 15) shower = 15;
+        if (toilet > 8) toilet = 8;
+        if (rest > 20) rest = 20;
+
+        hungerSlider.value = meal;
+        thirstSlider.value = drink;
+        restSlider.value = rest;
+        hygieneSlider.value = shower;
+        bladderSlider.value = toilet;
+
+
+
     }
 }
