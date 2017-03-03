@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Assets\Apex\AINameMap.cs" />
     <Compile Include="Assets\Scripts\Actions\Move.cs" />
+    <Compile Include="Assets\Scripts\Actions\ScanArea.cs" />
     <Compile Include="Assets\Scripts\Context\PlayerContext.cs" />
     <Compile Include="Assets\Scripts\Context\PlayerContextProvider.cs" />
     <Compile Include="Assets\Scripts\Context\TimeSinceLastX.cs" />
