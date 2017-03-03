@@ -11,7 +11,7 @@ public class PlayerContextProvider : MonoBehaviour, IContextProvider {
 
     private void Awake()
     {
-        _context = new PlayerContext(this.gameObject);
+        _context = new PlayerContext(this);
     }
 
     public IAIContext GetContext(Guid aiID)

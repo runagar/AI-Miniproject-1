@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using Apex.AI;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerContext : IAIContext {
-
-	public PlayerContext(GameObject gameObject, PlayerContextProvider player)
+    
+	public PlayerContext(PlayerContextProvider player)
     {
-        this.self = gameObject;
+        this.self = player.gameObject;
         this.player = player;
         this.observations = new List<GameObject>();
         this.myPosition = self.transform.position;
-        
+        this.navAgent = self.GetComponent<NavMeshAgent>();
     }
 
     public PlayerContextProvider player
@@ -21,6 +22,12 @@ public class PlayerContext : IAIContext {
     }
 
     public GameObject self
+    {
+        get;
+        private set;
+    }
+
+    public NavMeshAgent navAgent
     {
         get;
         private set;
