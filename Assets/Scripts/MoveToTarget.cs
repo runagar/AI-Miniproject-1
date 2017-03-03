@@ -5,20 +5,14 @@ using UnityEngine.AI;
 
 public class MoveToTarget : MonoBehaviour {
 
-    public void MoveTo(Vector3 target)
-    {
-        NavMeshAgent agent = this.gameObject.GetComponent<NavMeshAgent>();
-        agent.destination = target;
+    NavMeshAgent agent;
+    // Use this for initialization
+    void Start () {
+        agent = this.gameObject.GetComponent<NavMeshAgent>();
     }
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void MoveTo(Vector3 target)
+    {
+        agent.destination = target;
+    }
 }
