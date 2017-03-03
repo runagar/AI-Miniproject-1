@@ -13,6 +13,10 @@ public sealed class HungerScore : ContextualScorerBase {
 
         float time = c.self.GetComponent<TimeSinceLastX>().meal;
 
-        return this.score * time;
+        var newScore = this.score * time;
+
+        c.needScores[0] = newScore;
+
+        return newScore;
     }
 }
