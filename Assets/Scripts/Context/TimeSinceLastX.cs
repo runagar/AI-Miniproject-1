@@ -84,11 +84,11 @@ public class TimeSinceLastX : MonoBehaviour {
 
     void Update()
     {
-        meal += Time.deltaTime / 2;
-        drink += Time.deltaTime / 2;
-        shower += Time.deltaTime / 2;
-        toilet += Time.deltaTime / 2;
-        rest += Time.deltaTime / 2;
+        meal += Time.deltaTime;
+        drink += Time.deltaTime;
+        shower += Time.deltaTime;
+        toilet += Time.deltaTime;
+        rest += Time.deltaTime;
 
         if (meal > 20) meal = 20;
         if (drink > 20) drink = 20;

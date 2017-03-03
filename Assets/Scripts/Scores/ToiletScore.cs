@@ -17,6 +17,8 @@ public sealed class ToiletScore : ContextualScorerBase
 
         float newScore = score * time;
 
+        Debug.Log(newScore);
+
         c.needScores[4] = newScore;
 
         return newScore;

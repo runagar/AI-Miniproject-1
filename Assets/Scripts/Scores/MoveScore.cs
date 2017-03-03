@@ -29,7 +29,7 @@ public sealed class MoveScore : ContextualScorerBase
             }
         }
 
-        Debug.Log("[" + c.needScores[0]+ ", " + c.needScores[1] +", " + c.needScores[2] +", " + c.needScores[3] +", " + c.needScores[4] + "]" + "\n Highest Need = " + highestNeed);
+        Debug.Log("[" + c.needScores[0]+ ", " + c.needScores[1] +", " + c.needScores[2] +", " + c.needScores[3] +", " + c.needScores[4] + ", " + c.needScores[5] + "]" + "\n Highest Need = " + highestNeed);
 
         GameObject target = null;
 
@@ -61,7 +61,6 @@ public sealed class MoveScore : ContextualScorerBase
                 if (target != null && Vector3.Distance(c.self.transform.position, target.transform.position) > minDist)
                 {
                     c.target = target.transform.position;
-                    Debug.Log("Setting target to: " + target.name);
 
                     return 20000f;
                 }
